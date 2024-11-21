@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AWSProjectType>Lambda</AWSProjectType>
+		<AssemblyName>bootstrap</AssemblyName>
+		<!-- This property makes the build directory similar to a publish directory and helps the AWS .NET Lambda Mock Test Tool find project dependencies. -->
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	</PropertyGroup>
+	<!-- 
+  When publishing Lambda functions for ARM64 to the provided.al2 runtime a newer version of libicu needs to be included
+  in the deployment bundle because .NET requires a newer version of libicu then is preinstalled with Amazon Linux 2.
+  -->
+	<!--<ItemGroup>
+		<RdXmlFile Include="rd.xml" />
+	</ItemGroup>-->
+</Project>
